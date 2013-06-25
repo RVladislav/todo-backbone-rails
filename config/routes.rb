@@ -1,5 +1,12 @@
 TodoBackboneRails::Application.routes.draw do
+  namespace :api do
+    resources :lists, only: [] do
+      resources :todos, only: [:index, :create, :show, :update, :destroy]
+    end 
+  end
+
   resources :lists, only: [:new, :create, :show]
+
   root to: 'lists#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
