@@ -5,7 +5,7 @@ TodoBackboneRails::Application.routes.draw do
     end 
   end
 
-  resources :lists, only: [:new, :create, :show]
+  resources :lists, only: [:create, :show]
 
   root to: 'lists#new'
 

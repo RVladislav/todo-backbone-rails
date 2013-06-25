@@ -5,9 +5,11 @@
 </head>
 <body>
 
-<%= form_for(@list) do |f| %>
-  <%= f.submit %>
-<% end %>
+<form action="<%= lists_path %>" method="post">
+  Enter Your Caliper API Key:
+  <input type="text" name="caliper_api_key" value="<%= session[:caliper_api_key] %>">
+  <input type="submit" value="Start a new list!">
+</form>
 
 </body>
 </html>

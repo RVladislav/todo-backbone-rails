@@ -7,20 +7,9 @@ class ListsController < ApplicationController
     render layout: false
   end
 
-  # GET /lists/new
-  def new
-    @list = List.new
-  end
-
   # POST /lists
   def create
-    redirect_to List.create!(list_params)
-  end
-
-  private
-
-  # Only allow a trusted parameter "white list" through.
-  def list_params
-    params[:list]
+    session[:caliper_api_key] = params[:caliper_api_key]
+    redirect_to List.create!
   end
 end
