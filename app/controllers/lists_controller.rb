@@ -1,6 +1,9 @@
 class ListsController < ApplicationController
+  layout false
+
   # GET /lists/1
   def show
+    @list = List.find(params[:id])
     render layout: false
   end
 
