@@ -9,6 +9,9 @@ var app = app || {};
 
 	// Our basic **Todo** model has `title`, `order`, and `completed` attributes.
 	app.Todo = Backbone.Model.extend({
+		// Sync this model with the Rails API
+		urlRoot: '/api/lists/' + window.TodoListId + '/todos',
+
 		// Default attributes for the todo
 		// and ensure that each todo created has `title` and `completed` keys.
 		defaults: {
